@@ -1,0 +1,71 @@
+group = 'com.didichuxing.foundation'
+version = '0.0.5'
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion VERSION_COMPILE_SDK
+    buildToolsVersion VERSION_BUILD_TOOLS
+
+    defaultConfig {
+        minSdkVersion VERSION_MIN_SDK
+        targetSdkVersion VERSION_TARGET_SDK
+        versionCode 1
+        versionName "1.0"
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+        }
+    }
+    compileOptions {
+        sourceCompatibility SOURCE_COMPATIBILITY
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+android.libraryVariants.all  { variant ->
+    def jarTask = project.tasks.create("jar${variant.name.capitalize()}", Jar)
+    jarTask.excludes = [
+        'android/BuildConfig.class',
+        'android/R.class'
+    ]
+    jarTask.dependsOn variant.javaCompile
+    jarTask.from variant.javaCompile.destinationDir
+    artifacts.add('archives', jarTask)
+}
+
+apply plugin: 'maven'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            pom.project {
+                groupId project.group
+                artifactId 'android-framework'
+                version project.version
+                description project.description ?: ''
+                packaging 'jar'
+            }
+            repository(url: MAVEN_RELEASES_REPOSITORY_URL) {
+                authentication(userName: MAVEN_USERNAME, password: MAVEN_PASSWORD)
+            }
+            snapshotRepository(url: MAVEN_SNAPSHOTS_REPOSITORY_URL) {
+                authentication(userName: MAVEN_USERNAME, password: MAVEN_PASSWORD)
+            }
+        }
+    }
+}
+
+dependencies {
+    api 'com.android.support:support-annotations:22.2.0'
+    api 'com.android.databinding:library:1.3.1'
+    api 'com.android.databinding:baseLibrary:3.0.0'
+}

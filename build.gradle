@@ -1,0 +1,37 @@
+buildscript {
+    System.properties['com.android.build.gradle.overrideVersionCheck'] = 'true'
+
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.0'
+        classpath 'com.didi.virtualapk:gradle:0.9.8.6'
+
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+    }
+}
+
+ext {
+    VERSION_COMPILE_SDK = 27
+    VERSION_BUILD_TOOLS = '26.0.2'
+
+    VERSION_MIN_SDK = 15
+    VERSION_TARGET_SDK = 25
+
+    SOURCE_COMPATIBILITY = JavaVersion.VERSION_1_7
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        jcenter()
+        google()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
