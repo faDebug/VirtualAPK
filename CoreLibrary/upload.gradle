@@ -1,19 +1,19 @@
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-def GROUP_ID = 'com.didi.virtualapk'
+def GROUP_ID = 'com.kingdee.virtualapk'
 def ARTIFACT_ID = 'core'
 
 
 //def siteUrl = 'https://github.com/didi/VirtualAPK' // 项目的主页
 //def gitUrl = 'https://github.com/didi/VirtualAPK' // Git仓库的url
-def siteUrl = 'https://github.com/faDebug/didiVirtualAPK' // 项目的主页
-def gitUrl = 'https://github.com/faDebug/didiVirtualAPK' // Git仓库的url
+def siteUrl = 'https://github.com/faDebug/VirtualAPK' // 项目的主页
+def gitUrl = 'https://github.com/faDebug/VirtualAPK' // Git仓库的url
 
 group = GROUP_ID
 archivesBaseName = 'core'
 
-version = "0.9.8"
+version = "0.0.2"//"0.9.8"
 
 
 install {
@@ -36,9 +36,9 @@ install {
                 }
                 developers {
                     developer {
-                        id 'singwhatiwanna'    //填写的一些基本信息
-                        name 'DiDi'
-                        email 'singwhatiwanna@gmail.com'
+                        id 'jiafa_wei'    //填写的一些基本信息
+                        name 'kingdee'
+                        email 'fadebug@foxmail.com'
                     }
                 }
                 scm {
@@ -77,6 +77,7 @@ bintray {
     pkg {
         repo = "maven"
         name = "${GROUP_ID}:${ARTIFACT_ID}"    //发布到JCenter上的项目名字
+//        userOrg = "fadebugorganizationName"
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
