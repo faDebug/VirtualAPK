@@ -1,7 +1,7 @@
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-def GROUP_ID = 'com.kingdee.virtualapk'
+def GROUP_ID = 'com.kingdeejdypos.virtualapk'
 def ARTIFACT_ID = 'core'
 
 
@@ -13,7 +13,7 @@ def gitUrl = 'https://github.com/faDebug/VirtualAPK' // Git仓库的url
 group = GROUP_ID
 archivesBaseName = 'core'
 
-version = "0.0.2"//"0.9.8"
+version = "1.0.1"//"0.9.8"
 
 
 install {
