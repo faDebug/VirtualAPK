@@ -208,7 +208,7 @@ public class ActivityManagerProxy implements InvocationHandler {
 
         // start delegate service to run plugin service inside
         boolean local = PluginUtil.isLocalService(serviceInfo);
-        Class<? extends Service> delegate = local ? LocalService.class : RemoteService.class;
+        Class<? extends Service> delegate = local ? LocalService.class : (PluginUtil.isPresentation(serviceInfo)? PresentationService.class: RemoteService.class);
         Intent intent = new Intent();
         intent.setClass(mPluginManager.getHostContext(), delegate);
         intent.putExtra(RemoteService.EXTRA_TARGET, target);

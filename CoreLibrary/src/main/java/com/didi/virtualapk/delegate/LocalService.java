@@ -50,6 +50,7 @@ public class LocalService extends Service {
     public static final String EXTRA_TARGET = "target";
     public static final String EXTRA_COMMAND = "command";
     public static final String EXTRA_PLUGIN_LOCATION = "plugin_location";
+    public static final String EXTRA_PROCESS_PRESENTATION = "presentation";
 
     public static final int EXTRA_COMMAND_START_SERVICE = 1;
     public static final int EXTRA_COMMAND_STOP_SERVICE = 2;

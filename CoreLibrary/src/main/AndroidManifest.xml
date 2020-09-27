@@ -80,6 +80,11 @@
                 <action android:name="${applicationId}.intent.ACTION_DAEMON_SERVICE" />
             </intent-filter>
         </service>
+        <service android:exported="false" android:name="com.didi.virtualapk.delegate.PresentationService" android:process=":presentation">
+            <intent-filter>
+                <action android:name="${applicationId}.intent.ACTION_DAEMON_SERVICE" />
+            </intent-filter>
+        </service>
 
         <provider
             android:exported="false"

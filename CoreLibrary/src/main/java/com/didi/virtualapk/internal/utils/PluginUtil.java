@@ -32,6 +32,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.didi.virtualapk.PluginManager;
+import com.didi.virtualapk.delegate.PresentationService;
 import com.didi.virtualapk.internal.Constants;
 import com.didi.virtualapk.internal.LoadedPlugin;
 import com.didi.virtualapk.utils.Reflector;
@@ -160,6 +161,11 @@ public class PluginUtil {
 
     public static final boolean isLocalService(final ServiceInfo serviceInfo) {
         return TextUtils.isEmpty(serviceInfo.processName) || serviceInfo.applicationInfo.packageName.equals(serviceInfo.processName);
+    }
+
+    // 副屏进程
+    public static final boolean isPresentation(final ServiceInfo serviceInfo) {
+        return (serviceInfo.applicationInfo.packageName + ":"+ PresentationService.EXTRA_PROCESS_PRESENTATION).equals(serviceInfo.processName);
     }
 
     public static boolean isVivo(Resources resources) {
