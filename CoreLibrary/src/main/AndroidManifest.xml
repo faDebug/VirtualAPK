@@ -17,22 +17,6 @@
             android:theme="@android:style/Theme.Translucent"
             android:configChanges="orientation|keyboard|keyboardHidden|navigation|screenSize"/>
 
-        <!--&lt;!&ndash; Stub Activities 外设activity专用，用于NFC监听&ndash;&gt;-->
-        <!--<activity android:exported="false" android:name=".Peripheral" android:launchMode="singleInstance"-->
-            <!--android:configChanges="orientation|keyboard|keyboardHidden|navigation|screenSize">-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.nfc.action.NDEF_DISCOVERED" />-->
-            <!--</intent-filter>-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.nfc.action.TAG_DISCOVERED" />-->
-                <!--<category android:name="android.intent.category.DEFAULT" />-->
-            <!--</intent-filter>-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.nfc.action.TECH_DISCOVERED" />-->
-            <!--</intent-filter>-->
-
-            <!--<meta-data android:name="android.nfc.action.TECH_DISCOVERED"-->
-                <!--android:resource="@xml/tag_type" />-->
         <!--</activity>-->
         <!-- Stub Activities -->
         <activity android:exported="false" android:name=".B$1" android:launchMode="singleTop"
@@ -54,69 +38,13 @@
 
         <!-- Stub Activities -->
         <activity android:exported="false" android:name=".C$1" android:launchMode="singleTask"
-            android:configChanges="orientation|keyboard|keyboardHidden|navigation|screenSize">
-            <intent-filter>
-                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.nfc.action.TAG_DISCOVERED" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.nfc.action.TECH_DISCOVERED" />
-            </intent-filter>
-
-            <meta-data android:name="android.nfc.action.TECH_DISCOVERED"
-                android:resource="@xml/tag_type" />
-        </activity>
+            android:configChanges="orientation|keyboard|keyboardHidden|navigation|screenSize"/>
         <activity android:exported="false" android:name=".C$2" android:launchMode="singleTask"
-            android:configChanges="orientation|keyboard|keyboardHidden|navigation|screenSize">
-            <intent-filter>
-                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.nfc.action.TAG_DISCOVERED" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.nfc.action.TECH_DISCOVERED" />
-            </intent-filter>
-
-            <meta-data android:name="android.nfc.action.TECH_DISCOVERED"
-                android:resource="@xml/tag_type" />
-        </activity>
+            android:configChanges="orientation|keyboard|keyboardHidden|navigation|screenSize"/>
         <activity android:exported="false" android:name=".C$3" android:launchMode="singleTask"
-            android:configChanges="orientation|keyboard|keyboardHidden|navigation|screenSize">
-            <intent-filter>
-                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.nfc.action.TAG_DISCOVERED" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.nfc.action.TECH_DISCOVERED" />
-            </intent-filter>
-
-            <meta-data android:name="android.nfc.action.TECH_DISCOVERED"
-                android:resource="@xml/tag_type" />
-        </activity>
+            android:configChanges="orientation|keyboard|keyboardHidden|navigation|screenSize"/>
         <activity android:exported="false" android:name=".C$4" android:launchMode="singleTask"
-            android:configChanges="orientation|keyboard|keyboardHidden|navigation|screenSize">
-            <intent-filter>
-                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.nfc.action.TAG_DISCOVERED" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.nfc.action.TECH_DISCOVERED" />
-            </intent-filter>
-
-            <meta-data android:name="android.nfc.action.TECH_DISCOVERED"
-                android:resource="@xml/tag_type" />
-        </activity>
+            android:configChanges="orientation|keyboard|keyboardHidden|navigation|screenSize"/>
         <activity android:exported="false" android:name=".C$5" android:launchMode="singleTask"
             android:configChanges="orientation|keyboard|keyboardHidden|navigation|screenSize"/>
         <activity android:exported="false" android:name=".C$6" android:launchMode="singleTask"
@@ -126,7 +54,24 @@
         <activity android:exported="false" android:name=".C$8" android:launchMode="singleTask"
             android:configChanges="orientation|keyboard|keyboardHidden|navigation|screenSize"/>
 
-        <!-- Stub Activities -->
+        <!-- Stub Activities 引擎H5页面专用-->
+        <activity android:exported="false" android:name=".EngineH5" android:launchMode="singleInstance"
+            android:configChanges="orientation|keyboard|keyboardHidden|navigation|screenSize">
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.TAG_DISCOVERED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+            </intent-filter>
+
+            <meta-data android:name="android.nfc.action.TECH_DISCOVERED"
+                android:resource="@xml/tag_type" />
+        </activity>
+
         <activity android:exported="false" android:name=".D$1" android:launchMode="singleInstance"
             android:configChanges="orientation|keyboard|keyboardHidden|navigation|screenSize"/>
         <activity android:exported="false" android:name=".D$2" android:launchMode="singleInstance"

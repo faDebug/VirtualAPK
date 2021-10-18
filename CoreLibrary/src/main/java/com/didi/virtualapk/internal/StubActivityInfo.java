@@ -37,7 +37,7 @@ class StubActivityInfo {
     public static final String STUB_ACTIVITY_SINGLETOP = "%s.B$%d";
     public static final String STUB_ACTIVITY_SINGLETASK = "%s.C$%d";
     public static final String STUB_ACTIVITY_SINGLEINSTANCE = "%s.D$%d";
-//    public static final String STUB_ACTIVITY_PERIPHERAL = "%s.Peripheral"; // 外设activity专用，添加NFC检测
+    public static final String STUB_ACTIVITY_ENGINE_H5 = "%s.EngineH5"; // 引擎H5 activity专用，添加NFC检测
 
     public final int usedStandardStubActivity = 1;
     public int usedSingleTopStubActivity = 0;
@@ -89,10 +89,10 @@ class StubActivityInfo {
 
             default:break;
         }
-//        if (className != null && className.length() > 0 && className.contains("PluginPeripheralActivityMainActivity")){
-//            Log.d(Constants.TAG_PREFIX + "StubActivityInfo", "stubActivity before= " + stubActivity);
-//            stubActivity = String.format(STUB_ACTIVITY_PERIPHERAL, corePackage);
-//        }
+        if (className != null && className.length() > 0 && className.contains("PluginEngineActivityMainActivity")){
+            Log.d(Constants.TAG_PREFIX + "StubActivityInfo", "stubActivity before= " + stubActivity);
+            stubActivity = String.format(STUB_ACTIVITY_ENGINE_H5, corePackage);
+        }
         if (Constants.DEBUG) {
             Log.d(Constants.TAG_PREFIX + "StubActivityInfo", "stubActivity = " + stubActivity);
         }
