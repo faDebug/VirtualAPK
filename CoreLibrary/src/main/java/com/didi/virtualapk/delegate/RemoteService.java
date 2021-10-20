@@ -16,8 +16,10 @@
 
 package com.didi.virtualapk.delegate;
 
+import android.app.Notification;
 import android.content.ComponentName;
 import android.content.Intent;
+import android.os.Build;
 import android.os.IBinder;
 import android.util.Log;
 
@@ -33,6 +35,21 @@ import java.io.File;
 public class RemoteService extends LocalService {
     
     private static final String TAG = Constants.TAG_PREFIX + "RemoteService";
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        Notification notification = null;
+        if (Build.VERSION.SDK_INT > 15) {
+            Notification.Builder builder = new Notification.Builder(this);
+            builder.setContentTitle("本地引擎服务");
+            notification = builder.build();
+        } else {
+            notification = new Notification();
+        }
+        startForeground(android.os.Process.myPid(), notification);
+    }
 
     @Override
     public IBinder onBind(Intent intent) {

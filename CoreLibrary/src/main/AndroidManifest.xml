@@ -56,7 +56,8 @@
 
         <!-- Stub Activities 引擎H5页面专用-->
         <activity android:exported="false" android:name=".EngineH5" android:launchMode="singleTask"
-            android:configChanges="orientation|keyboard|keyboardHidden|navigation|screenSize">
+            android:configChanges="orientation|keyboard|keyboardHidden|navigation|screenSize"
+            android:hardwareAccelerated="true">
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED" />
             </intent-filter>
