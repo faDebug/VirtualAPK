@@ -74,7 +74,8 @@
         </activity>
 
         <activity android:exported="false" android:name=".D$1" android:launchMode="singleInstance"
-            android:configChanges="orientation|keyboard|keyboardHidden|navigation|screenSize"/>
+            android:configChanges="orientation|keyboard|keyboardHidden|navigation|screenSize"
+            android:hardwareAccelerated="true"/>
         <activity android:exported="false" android:name=".D$2" android:launchMode="singleInstance"
             android:configChanges="orientation|keyboard|keyboardHidden|navigation|screenSize"/>
         <activity android:exported="false" android:name=".D$3" android:launchMode="singleInstance"
