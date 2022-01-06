@@ -530,6 +530,15 @@ public class LoadedPlugin {
             return null;
         }
 
+        public boolean shouldShowRequestPermissionRationale(@NonNull String permission) {
+            try {
+                return Reflector.on(PackageManager.class).bind(mHostPackageManager).method("shouldShowRequestPermissionRationale", String[].class).call((Object)permission);
+            } catch (Reflector.ReflectedException e) {
+                e.printStackTrace();
+            }
+            return false;
+        }
+
         @Override
         public PackageInfo getPackageInfo(String packageName, int flags) throws NameNotFoundException {
 
